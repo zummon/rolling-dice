@@ -1,22 +1,26 @@
 <script>
+	import {onMount} from 'svelte'
 	let dices = ['⚀','⚁','⚂','⚃','⚄','⚅']
-	let randomNumbers = [0,0]
+	let randomNumbers = [0]
 
 	const randomize = () => {
 		randomNumbers = randomNumbers.map(() => {
 			return Math.floor(Math.random() * dices.length) 
 		})
 	}
+	onMount(() =>{
+		randomize()
+	})
 </script>
 
 <div class="flex w-fit mx-auto pb-8 pt-8 font-mono">
-	<button class="bg-[#b0725d] text-4xl text-white px-3 py-2 hover:text-[#b0725d] hover:bg-white focus:text-[#b0725d] focus:bg-white" on:click={() => {
+	<button class="text-4xl px-3 py-2 text-[#b0725d] bg-white " on:click={() => {
 		randomize()
 	}}>Roll</button>
-	<input class="w-16 text-4xl bg-[#b0725d] text-white text-center hover:text-[#b0725d] hover:bg-white focus:text-[#b0725d] focus:bg-white" type="number" title="How many dices?" 
+	<input class="w-16 text-4xl text-center text-[#b0725d] bg-white " type="number" title="How many dices?" 
 	value={randomNumbers.length}
 	min="1"
-	max="6"
+	max="8"
 		on:change={(e) => {
 		if (e.target.value >= 0) {
 			randomNumbers = Array.from({ length: e.target.value })
