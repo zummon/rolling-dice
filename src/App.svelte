@@ -13,7 +13,7 @@
 	})
 </script>
 
-<div class="flex w-fit mx-auto pb-8 pt-8 font-mono">
+<div class="flex w-fit mx-auto mb-8 font-mono">
 	<button class="text-4xl px-3 py-2 text-[#b0725d] bg-white " on:click={() => {
 		randomize()
 	}}>Roll</button>
@@ -30,9 +30,14 @@
 </div>
 
 <div class="bg-[#b0725d] container mx-auto">
-	<div class="grid grid-cols-2 mx-auto w-fit">
+	<div class="grid grid-cols-2 mx-auto w-fit cursor-default">
 		{#each randomNumbers as randomNumber, index (index)}
 			<div class="text-8xl text-white p-4">{dices[randomNumber]}</div>
 		{/each}
 	</div>
+</div>
+
+<div class="text-center mt-8 text-white">
+	Made by zummon (Teerapat Anantarattanachai)<br>
+	Something breaks, shows incorrect result. Let me know.
 </div>
