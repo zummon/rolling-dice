@@ -11,23 +11,23 @@
     <div
       class="flex flex-col items-center"
       x-data="{
-		dices: ['⚀', '⚁', '⚂', '⚃', '⚄', '⚅'],
-		multiple: 2,
-		get ranNums () {
-			console.log('rolling')
-			return Array.from({ length: this.multiple }).map(() => {
-				return Math.floor(Math.random() * this.dices.length);
-			});
-		},
-	}"
+				dices: ['⚀', '⚁', '⚂', '⚃', '⚄', '⚅'],
+				multiple: 2,
+				get ranNums () {
+					console.log('rolling')
+					return Array.from({ length: this.multiple }).map(() => {
+						return Math.floor(Math.random() * this.dices.length);
+					});
+				},
+			}"
     >
       <div class="flex w-fit mx-auto py-8 font-mono">
         <button
           class="text-4xl px-3 py-2 text-[#b0725d] bg-white"
           @click="() => {
-				multiple++;
-				multiple--;
-			}"
+						multiple++;
+						multiple--;
+					}"
         >
           Roll
         </button>
@@ -48,7 +48,8 @@
           </template>
         </div>
         <div class="text-center font-semibold">
-          Score <span x-text="ranNums.reduce((prev, curr) => prev + curr + 1, 0)"></span>
+          Score <span x-text="ranNums.reduce((prev, curr) => prev + curr + 1, 0)"></span> Error
+          <span x-text="ranNums"></span>
         </div>
       </div>
     </div>
