@@ -36,3 +36,8 @@
     <div class="text-8xl">{dices[ranNum]}</div>
   {/each}
 </div>
+
+<div class="text-center py-8 text-lime-600">
+  Made by zummon (Teerapat Anantarattanachai)<br />
+  Something breaks, needs upgrade. Let me know
+</div>
