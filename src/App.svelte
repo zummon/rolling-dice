@@ -31,11 +31,11 @@
 </script>
 
 <div class="flex flex-wrap gap-4 items-center ">
-	<button class="px-3 font-semibold text-2xl border-neutral-500 border-b-2" title="Click to play" onclick={()=> { drop() }}>
+	<button class="px-3 font-semibold text-2xl border-fuchsia-500 border-b-2 cursor-pointer" title="Click to play" onclick={()=> { drop() }}>
 		Roll
 	</button>
-	<input class="w-16 text-center font-semibold text-2xl border-neutral-500 border-b-2 bg-transparent" type="number" title="How many dices?" min="1" max="99" bind:value={multiple} >
-	<div class="text-center text-2xl font-mono text-neutral-500">
+	<input class="w-16 text-center font-semibold text-2xl border-fuchsia-500 border-b-2 bg-transparent" type="number" title="How many dices?" min="1" max="99" bind:value={multiple}>
+	<div class="text-center text-2xl font-mono">
 		Score {rolled.score}
 	</div>
 </div>
