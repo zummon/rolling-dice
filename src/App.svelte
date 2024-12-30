@@ -20,6 +20,11 @@
 	}
 
 	onMount(() => {
+		let params = new URLSearchParams(location.search)
+    let count = params.get('count')
+		if (count && !isNaN(count) && +count <= 99 && +count >= 1) {
+			multiple = +count
+		}
 		drop()
 	})
 </script>
